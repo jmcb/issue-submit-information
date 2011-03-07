@@ -2,17 +2,12 @@ require 'redmine'
 
 require 'dispatcher'
 
-Dispatcher.to_prepare :overview_view_page_forward do
-    require_dependency 'projects_helper'
-    ProjectsHelper.send(:include, OverviewForwardPluginPatch) unless ProjectsHelper.included_modules.include?(OverviewForwardPluginPatch)
-end
-
-Redmine::Plugin.register :overview_view_page_forward do
-  name 'Overview->View page forward'
+Redmine::Plugin.register :issue_submit_information do
+  name 'Issue Submit Information'
   author 'Jon McManus'
-  url 'http://github.com/jmcb/overview-view-page-forward'
-  author_url 'http://githu.com/jmcb'
-  description 'Take a Redmine user directly to the Issues page when entering a project from the Projects page.'
+  url 'http://github.com/jmcb/issue-submit-information'
+  author_url 'http://github.com/jmcb'
+  description 'Provide issue information and link when creating new issue via "Submit and Create".'
   version '0.1'
 
   requires_redmine :version_or_higher => '0.8.0'
