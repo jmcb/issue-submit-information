@@ -4,7 +4,7 @@ require 'dispatcher'
 
 Dispatcher.to_prepare :issue_submit_information do
     require_dependency 'issues_controller'
-    IssuesController.send(:include, IssuesSubmitInformationPatch) unless IssuesController.included_modules.include?(IssuesSubmitInformationPatch)
+    IssuesController.send(:include, IssueSubmitInformationPatch) unless IssuesController.included_modules.include?(IssueSubmitInformationPatch)
 end
 
 Redmine::Plugin.register :issue_submit_information do
