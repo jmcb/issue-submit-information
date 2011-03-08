@@ -2,6 +2,11 @@ require 'redmine'
 
 require 'dispatcher'
 
+Dispatcher.to_prepare :issue_submit_information do
+    require_dependency 'issues_controller'
+    IssuesController.send(:include, IssuesSubmitInformationPatch) unless IssuesController.included_modules.include?(IssuesSubmitInformationPatch)
+end
+
 Redmine::Plugin.register :issue_submit_information do
   name 'Issue Submit Information'
   author 'Jon McManus'
