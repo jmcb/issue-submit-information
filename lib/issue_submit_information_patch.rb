@@ -10,7 +10,7 @@ module IssueSubmitInformationPatch
 
         def create_with_issue_link
             without = create_without_issue_link
-            flash[:notice] = render_to_string(:partial => "issue-submit-information/info", :locals => {:issue => @issue, :project => @project})
+            flash[:notice] = l(:notice_successful_issue_create, self.class.helpers.link_to_issue(@issue, :project => @project))
             return without
         end
     
