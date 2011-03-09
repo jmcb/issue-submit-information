@@ -10,9 +10,9 @@ module IssueSubmitInformationPatch
 
         def create_with_issue_link
             without = create_without_issue_link
-            flash[:notice] = l(:notice_successful_issue_create, view_context.link_to_issue(@issue, :project => @project))
+            flash[:notice] = l(:notice_successful_issue_create, url_for(:controller => 'issues', :action => 'show', :id => @issue))
             return without
         end
-    
+
     end
-end 
+end
