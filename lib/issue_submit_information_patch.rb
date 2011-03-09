@@ -10,7 +10,8 @@ module IssueSubmitInformationPatch
 
         def create_with_issue_link
             without = create_without_issue_link
-            flash[:notice] << url_for(:controller => 'issues', :action => 'show', :id => @issue)
+            url = url_for(:controller => 'issues', :action => 'show', :id => @issue)
+            flash[:notice] << " <a href='#{url}'>#{issue.id}</a>"
             return without
         end
 
