@@ -1,2 +1,2 @@
 en:
-    notice_successful_issue_create: "Successful creation of issue {{value}}."
+  notice_successful_issue_create: "Successful creation of issue {{value}}."

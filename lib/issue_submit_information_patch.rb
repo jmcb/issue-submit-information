@@ -10,7 +10,7 @@ module IssueSubmitInformationPatch
 
         def create_with_issue_link
             without = create_without_issue_link
-            flash[:notice] = l(:notice_successful_issue_create, url_for(:controller => 'issues', :action => 'show', :id => @issue))
+            flash[:notice] = l("Successful creation of issue {{value}}.", url_for(:controller => 'issues', :action => 'show', :id => @issue))
             return without
         end
 
